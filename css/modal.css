@@ -1,0 +1,103 @@
+.modal-background {
+  position: relative;
+
+  background-color: rgba(46, 47, 66, 0.4);
+}
+.modal-window {
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  gap: 16px;
+  padding: 24px 24px;
+  margin: 0 auto;
+  width: 408px;
+  height: 584px;
+  background-color: #fcfcfc;
+  box-shadow:
+    0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    0 2px 1px 0 rgba(0, 0, 0, 0.2);
+}
+
+.close-window {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e7e9fc;
+  margin-left: auto;
+  width: 24px;
+  height: 24px;
+  border-radius: 24px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal-title {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.form-label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  padding: 4px 0px 0px 0px;
+}
+
+.form-input {
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  padding: 8px 38px;
+  width: 360px;
+  height: 40px;
+  max-width: 360px;
+  min-height: 40px;
+}
+
+.form-label-checkbox {
+  display: flex;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16667;
+  letter-spacing: 0.04em;
+  color: #8e8f99;
+  gap: 8px;
+}
+
+.privacy-link {
+  color: #4d5ae5;
+}
+
+.textarea {
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  padding: 8px 16px;
+}
+
+.send-btn {
+  margin: 0 auto;
+  width: 169px;
+  height: 56px;
+  display: inline-block; /* Дозволяє кнопці мати ширину/висоту і відступи, але залишатися в рядку, а не займати всю ширину екрану */
+  min-width: 169px; /* Гарантує, що кнопка ніколи не стане вужчою за цей розмір, навіть якщо тексту буде мало */
+  padding: 16px 32px; /* Робить кнопку великою і помітною (16px "подушка" зверху/знизу, 32px з боків) */
+  background-color: #4d5ae5; /* Заливає кнопку основним фірмовим синім кольором */
+  color: #ffffff; /* Фарбує текст на кнопці ("Order Service") у білий */
+  font-family: inherit; /* Змушує кнопку використовувати шрифт Roboto (інакше браузери ставлять кнопкам свій власний потворний шрифт) */
+  font-weight: 500; /* Робить текст на кнопці трохи товщим за стандартний */
+  font-size: 16px; /* Базовий розмір тексту для кнопки */
+  line-height: 1.5; /* Міжрядковий інтервал */
+  letter-spacing: 0.04em; /* Збільшує відстань між літерами, щоб кнопка виглядала солідніше */
+  cursor: pointer; /* Змінює курсор миші на "руку з вказівним пальцем" при наведенні, показуючи, що сюди можна клікати */
+  border: none; /* Прибирає стандартну системну об'ємну рамку, яку браузери малюють кнопкам */
+  border-radius: 4px; /* Робить кути кнопки ледь-ледь заокругленими */
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1); /* Додає плавний перехід зміни кольору (250 мілісекунд) */
+}
