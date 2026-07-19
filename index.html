@@ -457,40 +457,107 @@
             </li>
           </ul>
         </div>
+        <div class="subscribe">
+          <p class="footer-social-title">Subscribe</p>
+          <form class="spam-subscribe-form">
+            <input
+              class="email-field"
+              type="email"
+              name=""
+              id=""
+              placeholder="example@mail.com"
+            />
+            <button class="spam-subscribe-btn" type="submit">
+              Subscribe
+              <svg class="send-svg" width="24" height="24">
+                <use href="./images/icons.svg#send"></use>
+              </svg>
+            </button>
+          </form>
+        </div>
       </div>
     </footer>
-  </body>
-  <div class="modal-background">
-    <div class="modal-window">
-      <a href="" class="close-window"
-        ><svg width="8" height="8">
-          <use href="./images/icons.svg#x"></use>
-        </svg>
-      </a>
-      <p class="modal-title">Leave your contacts and we will call you back</p>
-      <form class="form">
-        <label class="form-label"
-          >Name<input type="text" class="form-input" />
-        </label>
-        <label class="form-label"
-          >Phone<input type="tel" class="form-input" />
-        </label>
-        <label class="form-label"
-          >Email<input type="email" class="form-input" />
-        </label>
-        <label class="form-label"
-          >Comment<textarea
+    <!--modal-window-->
+    <div class="modal-background">
+      <div class="modal-window">
+        <button type="button" class="close-btn">
+          <svg class="close-svg" width="8" height="8">
+            <use href="/images/icons.svg#close"></use>
+          </svg>
+        </button>
+        <p class="modal-title">Leave your contacts and we will call you back</p>
+        <form class="form">
+          <label class="form-label" for="user-name"> Name</label>
+          <div class="form-wrapper">
+            <input
+              type="text"
+              id="user-name"
+              name="Name"
+              class="form-input"
+              required
+            />
+            <svg class="modal-svg" width="12" heigh="12">
+              <use href="./images/icons.svg#name"></use>
+            </svg>
+          </div>
+
+          <label class="form-label" for="user-phone"> Phone</label>
+          <div class="form-wrapper">
+            <input
+              type="tel"
+              id="user-phone"
+              name="Phone"
+              class="form-input"
+              required
+            />
+            <svg class="modal-svg" width="12" heigh="12">
+              <use href="./images/icons.svg#phone"></use>
+            </svg>
+          </div>
+
+          <label class="form-label" for="user-email"> Email</label>
+          <div class="form-wrapper">
+            <input
+              type="email"
+              id="user-email"
+              name="Email"
+              class="form-input"
+              required
+            />
+            <svg class="modal-svg" width="12" heigh="12">
+              <use href="./images/icons.svg#mail"></use>
+            </svg>
+          </div>
+
+          <label class="form-label" for="user-comment">Comment</label>
+          <textarea
+            id="user-comment"
+            name="Comment"
             class="textarea"
             placeholder="Text input"
             rows="5"
           ></textarea>
-        </label>
-        <label class="form-label-checkbox">
-          <input type="checkbox" />I accept the terms and conditions of the
-          <a href="" class="privacy-link">Privacy Policy </a>
-        </label>
-        <button type="submit" class="send-btn">Send</button>
-      </form>
+
+          <div class="custom-checkbox">
+            <input
+              type="checkbox"
+              name="user-agreement"
+              id="user-agreement"
+              class="input-checkbox sr-only"
+            />
+            <label class="agreement-label" for="user-agreement">
+              <span class="agreement-checkbox">
+                <svg class="checked-svg" width="10" height="8">
+                  <use href="./images/icons.svg#check" />
+                </svg>
+              </span>
+              I accept the terms and conditions of the
+              <a href="#">Privacy Policy</a>
+            </label>
+          </div>
+          <button type="submit" class="send-btn">Send</button>
+        </form>
+      </div>
     </div>
-  </div>
+  </body>
 </html>

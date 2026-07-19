@@ -12,6 +12,10 @@ body {
   font-weight: 400; /* це мабуть не обов'язково */
 }
 
+/* body:has(.modal-background.is-open) {
+  overflow-y: hidden;
+} техніка блокування скролу*/
+
 h1,
 h2,
 h3,

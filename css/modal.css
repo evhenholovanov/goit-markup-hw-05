@@ -1,17 +1,42 @@
 .modal-background {
-  position: relative;
-
+  /* display: flex; */
+  position: fixed;
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  /* width: 100dvw;
+  height: 100dvh; */
+  width: 100%;
+  height: 100%;
+  /* justify-content: center;
+  align-items: center; */
+  z-index: 999;
   background-color: rgba(46, 47, 66, 0.4);
+  opacity: 0;
+  pointer-events: none;
+
+  transition: opacity 250ms ease-in-out;
 }
+
+.modal-background.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .modal-window {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 72px 24px 24px;
   display: flex;
   flex-direction: column;
   border-radius: 4px;
-  gap: 16px;
-  padding: 24px 24px;
-  margin: 0 auto;
-  width: 408px;
-  height: 584px;
+
+  margin: auto;
+  min-width: 408px;
+  height: auto;
+
   background-color: #fcfcfc;
   box-shadow:
     0 1px 1px 0 rgba(0, 0, 0, 0.14),
@@ -19,71 +44,176 @@
     0 2px 1px 0 rgba(0, 0, 0, 0.2);
 }
 
-.close-window {
+.close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  padding: 0;
+
   display: flex;
   align-items: center;
   justify-content: center;
+  outline: none;
   background-color: #e7e9fc;
   margin-left: auto;
   width: 24px;
   height: 24px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  transition-property: border-color, background-color;
+  transition: 250ms ease-in-out;
   border-radius: 24px;
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.close-btn:focus,
+.close-btn:hover {
+  transition-property: border-color, background-color;
+  transition: 250ms ease-in-out;
+  cursor: pointer;
+  background-color: #404bbf;
+  border: 1px solid #404bbf;
+}
+
+.close-svg {
+  transition: color 250ms ease-in-out;
+  color: #2e2f42;
+}
+
+.close-btn:focus .close-svg,
+.close-btn:hover .close-svg {
+  transition: color 250ms ease-in-out;
+  color: #ffffff;
 }
 
 .modal-title {
   font-weight: 500;
   font-size: 16px;
+  /* display: flex;
+  justify-content: center; */
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
 }
 
 .form-label {
   display: flex;
   flex-direction: column;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.16667;
-  letter-spacing: 0.04em;
+
   color: #8e8f99;
-  padding: 4px 0px 0px 0px;
+  margin-top: 8px;
 }
 
 .form-input {
+  color: rgba(46, 47, 66, 0.4);
   border: 1px solid #8e8f99;
   border-radius: 4px;
   padding: 8px 38px;
-  width: 360px;
+  margin-top: 4px;
+  width: 100%;
   height: 40px;
-  max-width: 360px;
+  min-width: 360px;
   min-height: 40px;
+  outline: none;
+  transition-property: border-color;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.form-label-checkbox {
-  display: flex;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 1.16667;
-  letter-spacing: 0.04em;
-  color: #8e8f99;
-  gap: 8px;
+.form-wrapper {
+  position: relative;
+}
+
+.modal-svg {
+  position: absolute;
+  left: 19px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #2e2f42;
+  transition-property: color;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/*svg синій при фокусі*/
+.form-input:focus,
+.textarea:focus {
+  transition-property: border-color;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #4d5ae5;
+}
+
+.form-input:focus + .modal-svg {
+  transition-property: color;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  color: #4d5ae5;
+}
+
+.textarea {
+  color: rgba(46, 47, 66, 0.4);
+  margin-top: 4px;
+  margin-bottom: 16px;
+  outline: none;
+  border: 1px solid #8e8f99;
+  border-radius: 4px;
+  padding: 8px 16px;
+  min-width: 362px;
+  resize: none;
+  transition-property: border-color;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.textarea::placeholder {
+  color: rgba(46, 47, 66, 0.4);
+}
+
+.custom-checkbox {
+  margin-bottom: 24px;
+}
+
+.agreementagreement-label {
+  color: rgba(46, 47, 66, 0.7);
+}
+
+.checked-svg {
+  fill: transparent;
+}
+
+.input-checkbox:checked + .agreement-label > .agreement-checkbox {
+  transition-property: opacity;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 1;
+}
+
+.input-checkbox + .agreement-label > .agreement-checkbox {
+  background-color: #404bbf;
+  border: 1px solid #404bbf;
+  color: #fff;
+  opacity: 0;
+  transition-property: opacity;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.agreement-checkbox {
+  color: transparent;
+  margin-right: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  border: 1px solid rgba(46, 47, 66, 0.4);
 }
 
 .privacy-link {
   color: #4d5ae5;
 }
 
-.textarea {
-  border: 1px solid #8e8f99;
-  border-radius: 4px;
-  padding: 8px 16px;
-}
-
 .send-btn {
-  margin: 0 auto;
+  outline: none;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
   width: 169px;
   height: 56px;
   display: inline-block; /* Дозволяє кнопці мати ширину/висоту і відступи, але залишатися в рядку, а не займати всю ширину екрану */
