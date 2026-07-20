@@ -62,7 +62,7 @@
   border: 1px solid rgba(46, 47, 66, 0.4);
   transition:
     border-color,
-    background-color 250ms ease-in-out;
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 24px;
 }
 
@@ -75,7 +75,7 @@
 
 .close-svg {
   color: #2e2f42;
-  transition: color 250ms ease-in-out;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn:focus .close-svg,
@@ -155,7 +155,8 @@
   border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   padding: 8px 16px;
-  min-width: 362px;
+  min-width: 360px;
+  max-width: 360px;
   min-height: 120px;
   resize: none;
 
