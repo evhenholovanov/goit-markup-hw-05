@@ -48,7 +48,7 @@
   background-color: #31d0aa; /* При наведенні курсору іконки у футері стають яскраво-зеленими (на відміну від команди, де вони сині) */
 }
 .footer-social-link {
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* div */
@@ -93,7 +93,7 @@
   line-height: 1.5;
   letter-spacing: 0.04em;
 
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   justify-content: center;
