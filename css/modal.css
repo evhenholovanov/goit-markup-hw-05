@@ -12,9 +12,9 @@
   align-items: center; */
   z-index: 999;
   background-color: rgba(46, 47, 66, 0.4);
-  /* visibility: hidden;
+  visibility: hidden;
   opacity: 0;
-  pointer-events: none; */
+  pointer-events: none;
 
   transition: opacity 250ms ease-in-out;
 }
@@ -207,7 +207,7 @@
 
 .privacy-link {
   color: #4d5ae5;
-  /* text-decoration: underline; */
+  text-decoration: underline;
 }
 
 /* logic for custom ch-box */
