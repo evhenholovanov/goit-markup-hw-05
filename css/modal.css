@@ -19,6 +19,7 @@
 }
 
 .modal-background.is-open {
+  visibility: visible;
   opacity: 1;
   pointer-events: auto;
 }
@@ -32,8 +33,6 @@
   display: flex;
   flex-direction: column;
   border-radius: 4px;
-
-  margin: auto;
   min-width: 408px;
   height: auto;
 
@@ -60,15 +59,14 @@
   width: 24px;
   height: 24px;
   border: 1px solid rgba(46, 47, 66, 0.4);
-  transition-property: border-color, background-color;
-  transition: 250ms ease-in-out;
+  transition:
+    border-color,
+    background-color 250ms ease-in-out;
   border-radius: 24px;
 }
 
 .close-btn:focus,
 .close-btn:hover {
-  transition-property: border-color, background-color;
-  transition: 250ms ease-in-out;
   cursor: pointer;
   background-color: #404bbf;
   border: 1px solid #404bbf;
@@ -76,12 +74,10 @@
 
 .close-svg {
   transition: color 250ms ease-in-out;
-  color: #2e2f42;
 }
 
 .close-btn:focus .close-svg,
 .close-btn:hover .close-svg {
-  transition: color 250ms ease-in-out;
   color: #ffffff;
 }
 
@@ -94,6 +90,7 @@
 }
 
 .form {
+  margin-top: 16px;
   display: flex;
   flex-direction: column;
 }
@@ -101,14 +98,16 @@
 .form-label {
   display: flex;
   flex-direction: column;
-
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
   color: #8e8f99;
   margin-top: 8px;
 }
 
 .form-input {
   color: rgba(46, 47, 66, 0.4);
-  border: 1px solid #8e8f99;
+  border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   padding: 8px 38px;
   margin-top: 4px;
@@ -117,8 +116,8 @@
   min-width: 360px;
   min-height: 40px;
   outline: none;
-  transition-property: border-color;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-wrapper {
@@ -130,71 +129,55 @@
   left: 19px;
   top: 50%;
   transform: translateY(-50%);
-  color: #2e2f42;
-  transition-property: color;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /*svg синій при фокусі*/
 .form-input:focus,
 .textarea:focus {
-  transition-property: border-color;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid #4d5ae5;
 }
 
 .form-input:focus + .modal-svg {
-  transition-property: color;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   color: #4d5ae5;
 }
 
 .textarea {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
   color: rgba(46, 47, 66, 0.4);
   margin-top: 4px;
   margin-bottom: 16px;
   outline: none;
-  border: 1px solid #8e8f99;
+  border: 1px solid rgba(46, 47, 66, 0.4);
   border-radius: 4px;
   padding: 8px 16px;
   min-width: 362px;
+  min-height: 120px;
   resize: none;
-  transition-property: border-color;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .textarea::placeholder {
   color: rgba(46, 47, 66, 0.4);
 }
 
+/* divcheckbox+agreement */
 .custom-checkbox {
   margin-bottom: 24px;
 }
-
-.agreementagreement-label {
+/* input */
+/* .input-checkbox {
+} */
+/* label for input-checkbox */
+.agreement-label {
+  display: inline-flex;
+  align-items: center;
   color: rgba(46, 47, 66, 0.7);
 }
-
-.checked-svg {
-  fill: transparent;
-}
-
-.input-checkbox:checked + .agreement-label > .agreement-checkbox {
-  transition-property: opacity;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  opacity: 1;
-}
-
-.input-checkbox + .agreement-label > .agreement-checkbox {
-  background-color: #404bbf;
-  border: 1px solid #404bbf;
-  color: #fff;
-  opacity: 0;
-  transition-property: opacity;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
+/* span for checkbox */
 .agreement-checkbox {
-  color: transparent;
   margin-right: 8px;
   display: inline-flex;
   align-items: center;
@@ -203,15 +186,32 @@
   height: 16px;
   border-radius: 2px;
   border: 1px solid rgba(46, 47, 66, 0.4);
+
+  color: transparent;
+
+  cursor: pointer;
+
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: background-color, color, border-color;
+}
+/* svg */
+.checked-svg {
+  fill: currentColor;
 }
 
 .privacy-link {
   color: #4d5ae5;
 }
 
+/* logic for custom ch-box */
+.input-checkbox:checked + .agreement-label > .agreement-checkbox {
+  background-color: #404bbf;
+  border-color: #404bbf;
+  color: #f4f4f4;
+}
+
 .send-btn {
   outline: none;
-  margin-top: 24px;
   margin-left: auto;
   margin-right: auto;
   width: 169px;

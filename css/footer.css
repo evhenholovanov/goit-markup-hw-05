@@ -48,8 +48,7 @@
   background-color: #31d0aa; /* При наведенні курсору іконки у футері стають яскраво-зеленими (на відміну від команди, де вони сині) */
 }
 .footer-social-link {
-  transition-property: background-color;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* div */
@@ -64,20 +63,17 @@
 }
 
 .email-field:focus {
-  transition-property: border-color;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
   border-color: #31d0aa;
 }
 .email-field {
-  transition-property: border-color;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 264px;
   height: 40px;
   border: 1px solid #fff;
   border-radius: 4px;
   background-color: inherit;
   font-size: 12px;
-  /* icon-color */
+
   color: #fff;
 
   padding: 8px 16px;
@@ -97,8 +93,7 @@
   line-height: 1.5;
   letter-spacing: 0.04em;
 
-  transition-property: background-color;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,7 +105,4 @@
   padding: 8px 24px;
   min-width: 165px;
   outline: none;
-}
-
-.send-svg {
 }
