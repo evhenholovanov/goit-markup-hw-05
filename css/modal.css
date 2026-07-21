@@ -198,8 +198,8 @@
 
   cursor: pointer;
 
-  transition: 250ms cubic-bezier 250ms (0.4, 0, 0.2, 1);
-  transition-property: background-color, color, border-color;
+  transition: 250ms cubic-bezier (0.4, 0, 0.2, 1);
+  transition-property: background-color, border-color;
 }
 /* svg */
 /* logic for custom ch-box */
