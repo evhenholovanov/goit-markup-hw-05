@@ -50,7 +50,7 @@
   right: 24px;
 
   padding: 0;
-  color: #2e2f42;
+  /* color: #2e2f42; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,13 +74,13 @@
 }
 
 .close-svg {
-  fill: currentColor;
+  fill: #2e2f42;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn:focus .close-svg,
 .close-btn:hover .close-svg {
-  color: #ffffff;
+  fill: #ffffff;
 }
 
 .modal-title {
@@ -131,8 +131,8 @@
   left: 16px;
   top: 50%;
   transform: translateY(-50%);
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  color: #2e2f42;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  fill: #2e2f42;
 }
 /*svg синій при фокусі*/
 .form-input:focus,
@@ -141,7 +141,7 @@
 }
 
 .form-input:focus + .modal-svg {
-  color: #4d5ae5;
+  fill: #4d5ae5;
 }
 
 .textarea {
@@ -198,24 +198,28 @@
 
   cursor: pointer;
 
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: 250ms cubic-bezier 250ms (0.4, 0, 0.2, 1);
   transition-property: background-color, color, border-color;
 }
 /* svg */
-.checked-svg {
-  fill: currentColor;
-}
-
-.privacy-link {
-  color: #4d5ae5;
-  text-decoration: underline;
-}
-
 /* logic for custom ch-box */
 .input-checkbox:checked + .agreement-label > .agreement-checkbox {
   background-color: #404bbf;
   border-color: #404bbf;
-  color: #f4f4f4;
+}
+
+.checked-svg {
+  opacity: 0;
+  fill: #f4f4f4;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input-checkbox:checked ~ .agreement-label .checked-svg {
+  opacity: 1;
+}
+.privacy-link {
+  color: #4d5ae5;
+  text-decoration: underline;
 }
 
 .send-btn {
